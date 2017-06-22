@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>在线留言</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<script src="js/jquery-3.2.1.js"></script>
+		<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/index3.css" />
+	</head>
+
+	<body>
+		<div class="yd-app">
+			<header>
+				<div class="nav-one">
+					<span class="glyphicon glyphicon-list"></span>
+					<ul class="nav-ll">
+						<li>
+							<a href="#">登录</a>
+						</li>
+						<li>
+							<a href="#">注册</a>
+						</li>
+						<li>
+							<a href="#">数据/网络</a>
+						</li>
+						<li>
+							<a href="#">分离的链接</a>
+						</li>
+					</ul>
+				</div>
+				<div><span class="glyphicon glyphicon-th"></span><em>甲鱼之湘</em></div>
+				<div><span class="glyphicon glyphicon-stats"></span></div>
+			</header>
+			<div class="banner">
+				<div class="lb">
+					<ul>
+						<li><img src="img/gund/5.jpg"></li>
+						<li><img src="img/gund/7.jpg"></li>
+					</ul>
+					<span style="background:red"></span>
+					<span></span>
+				</div>
+			</div>
+			<div class="menu">
+				<a href="index.html">首页</a>
+				<a href="">养殖技术</a>
+				<a href="index2.html">图片展示</a>
+				<a href="#">制作方法</a>
+				<a href="#">在线留言</a>
+			</div>
+			<section>
+				<div class="c1">
+					<marquee direction="left">欢迎您提供宝贵的意见</marquee>
+				</div>
+				<div class="c2">
+					<textarea  id="txt"  style="width: 80%;" ></textarea>
+					<div id="btn"><img  src="img/logo/fatie.gif" alt="" /></div>
+				</div>
+				<div class="c2-txt" id="c2-txt"></div>
+			</section>
+		</div>
+	</body>
+	<script>
+	function delHtmlTag(str){  
+        return str.replace(/<[^>]+>/g,"");
+        }
+	 function $(id){
+        	return document.getElementById(id);
+        }
+	   var txt=$("txt");
+	   var btn=$("btn");
+	   var c2t=$("cs-txt");
+	   btn.onclick=function(ev){
+	   	c2t.innerHTML+=delHtmlTag(txt.value)+"<br/>"
+	   }
+		$(function() {
+				var s = 0;
+				$(".nav-one span").click(function() {
+					s++;
+					if(s % 2 !== 0) {
+						$(".nav-ll").css({
+							"display": "block"
+						});
+					} else {
+						$(".nav-ll").css({
+							"display": "none"
+						})
+					}
+				})
+
+			})
+			//document.addEventListener("touchstart",function(ev)
+			//{
+			//ev.preventDefault();
+			//})
+		var lb = document.getElementsByClassName("lb");
+		var u = lb[0].getElementsByTagName("ul");
+		var ls = u[0].getElementsByTagName("li");
+		var sp = lb[0].getElementsByTagName("span");
+		var lefttwo = 0;
+		var w = ls[0].clientWidth;
+		var x;
+		var n = 0;
+		lb[0].addEventListener("touchstart", function(ev) {
+			x = ev.changedTouches[0].pageX;
+			lefttwo = u[0].offsetLeft;
+		})
+		lb[0].addEventListener("touchmove", function(ev) {
+			var jj = x - ev.changedTouches[0].pageX;
+			if(jj < 0) {
+				if(parseInt(u[0].offsetLeft) > w / 10) {
+					return;
+				}
+				u[0].style.left = -(x - ev.changedTouches[0].pageX) + lefttwo + "px";
+
+			} else {
+				if(jj > 0) {
+					if(parseInt(u[0].offsetLeft) < -400) {
+						return;
+					}
+					u[0].style.left = -(x - ev.changedTouches[0].pageX) + lefttwo + "px";
+				}
+			}
+
+		})
+		lb[0].addEventListener("touchend", function(ev) {
+			n = Math.round(u[0].offsetLeft / w);
+			u[0].style.left = w * n + "px";
+
+			if(-u[0].offsetLeft / w == 1) {
+				sp[1].style.background = "red";
+				sp[0].style.background = "none";
+			} else {
+				sp[1].style.background = "none";
+				sp[0].style.background = "red";
+			}
+		})
+		var ez = 0;
+		var time = setInterval(function() {
+			ez++
+			if(ez == 2) {
+				ez = 0;
+			}
+			u[0].style.left = -(w * ez) + "px";
+			if(ez == 1) {
+				sp[1].style.background = "red";
+				sp[0].style.background = "none";
+			} else {
+				sp[1].style.background = "none";
+				sp[0].style.background = "red";
+			}
+		}, 3000)
+		for(var i = 0; i < sp.length; i++) {
+			sp[i].index = i;
+			sp[i].addEventListener("click", function() {
+				u[0].style.left = -this.index * w + "px";
+				if(this.index == 1) {
+					sp[1].style.background = "red";
+					sp[0].style.background = "none";
+				} else {
+					sp[1].style.background = "none";
+					sp[0].style.background = "red";
+				}
+			})
+		}
+	</script>
+
+</html>

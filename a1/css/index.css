@@ -1,0 +1,50 @@
+* { margin: 0; padding: 0; }
+
+a { text-decoration: none; color: #000000; }
+
+ul, li, ol, li { list-style: none; }
+
+html, body { width: 100%; height: 100%; font-family: "Lucida Grande", Tahoma, Verdana, Lucida, Arial, Helvetica, sans-serif; }
+
+.yd-app { width: 100%; height: 100%; margin-left: 0 10pxp; }
+.yd-app header { width: 100%; height: 2rem; display: flex; justify-content: space-around; min-width: 320px; background: url("../img/logo/top.gif"); line-height: 2rem; color: white; position: relative; top: 0; font-size: 1.5rem; }
+.yd-app header div ul { position: absolute; left: 0; display: none; z-index: 99; }
+.yd-app header div ul li { width: 100px; background: beige; border-bottom: 1px solid #ccc; text-align: center; }
+.yd-app header div ul li:hover { background: coral; }
+.yd-app .banner { width: 100%; height: 9rem; overflow: hidden; }
+.yd-app .banner .lb { width: 100%; height: 9rem; position: relative; overflow: hidden; }
+.yd-app .banner .lb ul { width: 200%; height: 9rem; position: absolute; left: 0; top: 0; }
+.yd-app .banner .lb ul li { width: 50%; height: 9rem; float: left; }
+.yd-app .banner .lb ul li img { width: 100%; height: 9rem; z-index: 9; }
+.yd-app .banner .lb span { display: inline-block; width: 0.8rem; height: 0.8rem; border: 0.01rem solid coral; position: absolute; z-index: 1; right: 0.5rem; bottom: 0.8rem; border-radius: 5px; }
+.yd-app .banner .lb span:nth-child(2) { position: absolute; right: 1.5rem; }
+.yd-app .menu { width: 100%; height: 2rem; line-height: 2rem; display: flex; justify-content: space-around; background: url("../img/logo/dh_bg0.gif"); }
+.yd-app .menu a { color: white; }
+.yd-app section { width: 100%; }
+.yd-app section .time { width: 100%; height: 2rem; line-height: 2rem; background: blanchedalmond; font-size: 12px; border: 1px solid #ccc; text-align: center; }
+.yd-app section .content .content-tb { width: 100%; height: 2rem; line-height: 2rem; background-image: url("../img/logo/mainbg.gif"); }
+.yd-app section .content .content-tb span { margin-left: 10px; }
+.yd-app section .content .content-tb span:nth-child(2) { color: red; }
+.yd-app section .content .content-ta { width: 100%; border-bottom: 1px solid #6CAB2E; background: white; overflow: hidden; padding-left: 10px; }
+.yd-app section .content .content-ta ul li { box-sizing: border-box; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; position: relative; padding-left: 10px; font-size: 1.5rem; height: 20px; line-height: 20px; }
+.yd-app section .content .content-ta ul li:before { position: absolute; content: ""; width: 10px; height: 10px; left: 0; top: 5px; background: url("../img/logo/blog_icon.jpg"); }
+.yd-app section .content .ns1 { height: 2rem; line-height: 2rem; background-image: url("../img/logo/mainbg.gif"); color: red; display: flex; justify-content: space-between; }
+.yd-app section .content .ns1 img { margin-left: 10px; }
+.yd-app section .content .news, .yd-app section .content .yzjs-nr { width: 100%; min-height: 13rem; border-bottom: 1px solid #6CAB2E; background: white; overflow: hidden; padding-left: 10px; }
+.yd-app section .content .news ul li, .yd-app section .content .yzjs-nr ul li { box-sizing: border-box; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; position: relative; padding-left: 10px; font-size: 1.5rem; height: 20px; line-height: 20px; }
+.yd-app section .content .news ul li a, .yd-app section .content .yzjs-nr ul li a { display: inline-block; width: 83%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.yd-app section .content .news ul li:before, .yd-app section .content .yzjs-nr ul li:before { position: absolute; content: ""; width: 10px; height: 10px; left: 0; top: 5px; background: url("../img/logo/blog_icon.jpg"); }
+.yd-app section .content .news ul li span, .yd-app section .content .yzjs-nr ul li span { position: absolute; right: 5px; }
+.yd-app section .content .yzjs { width: 100%; display: flex; justify-content: aspace-between; }
+.yd-app section .content .yzjs div { height: 2rem; line-height: 2rem; color: red; }
+.yd-app section .content .yzjs div:nth-child(1) { width: 20%; background: url("../img/logo/agri_bg.jpg"); text-align: center; }
+.yd-app section .content .yzjs div:nth-child(2) { width: 80%; background: url("../img/logo/agri_bg2.jpg"); text-align: right; }
+.yd-app section .box-t { display: flex; justify-content: center; width: 100%; height: 2rem; line-height: 2rem; background: url("../img/logo/mainbg.gif"); color: red; }
+@keyframes picScroll { 100% { left: -800px; } }
+.yd-app section .box { width: 100%; height: 10rem; overflow: hidden; position: relative; margin-top: 5px; }
+.yd-app section .box .gund-tp { position: absolute; width: 1800px; animation: picScroll 10s infinite linear; left: 0; }
+.yd-app section .box .gund-tp img { width: 200px; height: 120px; float: left; }
+.yd-app footer { width: 100%; height: 2.3rem; line-height: 2.3rem; background: url("../img/logo/top.gif"); }
+.yd-app footer .footer-centent { width: 100%; color: white; text-align: center; }
+
+/*# sourceMappingURL=index.css.map */
